@@ -6,6 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <br>
+    <script>
+        var x=101;
+        let y=102;
+        const z=103;
+        // document.write("<br>");
+
+        function scopeExample() {
+            var x=1;
+            let y=2;
+            const z=3;
+            if (true) {
+                var x=10;
+                let y =20;
+                const z=30;
+                document.write(x);
+                document.write(y);
+                document.write(z);
+                document.write("<br>");
+            }
+            document.write(x);
+            document.write(y);
+            document.write(z);
+            document.write("<br>")
+        }
+        
+        scopeExample();
+        document.write(x);
+        document.write(y);
+        document.write(z);
+
+    </script>
 </body>
 </html>

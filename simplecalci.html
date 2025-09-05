@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .simplecal {
+      width: 420px;
+      padding: 25px;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .simplecal h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .simplecal input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .simplecal input:focus {
+      border-color: #2575fc;
+      box-shadow: 0 0 10px rgba(37,117,252,0.3);
+      outline: none;
+    }
+
+    .btn-custom {
+      width: 55px;
+      height: 55px;
+      font-size: 20px;
+      margin: 10px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    .result-box {
+      background: #f8f9fa;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="simplecal">
+    <h2>Simple Calculator</h2>
+    <input type="text" id="n1"  class="form-control" placeholder="Enter Number 1">
+    <input type="text" id="n2"  class="form-control" placeholder="Enter Number 2">
+    <input type="text" id="res" class="form-control result-box" placeholder="Result" disabled>
+
+    <div class="d-flex flex-wrap justify-content-center">
+      <button onclick="add()" class="btn btn-primary btn-custom">+</button>
+      <button onclick="calculate('-')" class="btn btn-danger btn-custom">-</button>
+      <button onclick="calculate('*')" class="btn btn-success btn-custom">*</button>
+      <button onclick="calculate('/')" class="btn btn-warning btn-custom">/</button>
+      <button onclick="calculate('%')" class="btn btn-info btn-custom">%</button>
+    </div>
+  </div>
+
+  <script>
+    function calculate(op) {
+      let n1 = Number(document.getElementById("n1").value);
+      let n2 = Number(document.getElementById("n2").value);
+      let result = 0;
+      function add() {
+        result=n1+n2;
+        return;
+      }
+      switch(op) {
+        case '+': result = n1 + n2; break;
+        case '-': result = n1 - n2; break;
+        case '*': result = n1 * n2; break;
+        case '/': result = n2 !== 0 ? n1 / n2 : "Error"; break;
+        case '%': result = n2 !== 0 ? n1 % n2 : "Error"; break;
+      }
+
+      document.getElementById("res").value = result;
+    }
+  </script>
+</body>
+</html>

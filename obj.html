@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a={
+            fname:"Gaurav",
+            lname:"Patil",
+            age:22,
+            email:"gauravpatil@gmail.com",
+            players:['Sachin','Yuvraj','Virendra','Saurabh'],
+            address:{
+                city:'Pune',
+                country:"India",
+            },
+            phone:8237283723,
+        }
+        document.write("My name is "+a.fname+", My age is "+a.age+", My Fav player is "+a.players[2]+", My country is "+a.address.country)
+    </script>
+    <script>
+        var employee=[
+            {name:'Dipak',age:45,salary:40000,},
+            {name:'Disha',age:56,salary:45000,},
+            {name:'Narayan',age:47,salary:30000,},
+            {name:'Mayuri',age:28,salary:45000,},
+            {name:'Devendra',age:25,salary:48000,},
+        ]
+        employee.forEach((elem) => {
+            document.write("<br> Employee Name: "+elem.name+"<br> Age: "+elem.age+"<br> Salary: "+elem.salary)
+        });
+    </script>
+</body>
+</html>

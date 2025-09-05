@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Using For loop</h2>
+    <ul class="ul">
+
+    </ul>
+    <h3></h3>
+    <!-- <script>
+        let array=["asnm",100,true,"a",56]
+        document.write(array);
+    </script> -->
+    <script>
+        var arr=[10,20,30,40,50,60,70,80,90,100];
+        let ul=document.querySelector(".ul");
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum+=arr[i];
+            ul.innerHTML+=`<li>${arr[i]}</li>`
+        }
+        document.querySelector("h3").innerText=sum;
+        document.write("<h2>Using While loop</h2>");
+            document.write("<ul>")
+        let i=0;
+        let summ=0;
+        while (i<arr.length) {
+            summ+=arr[i];
+            document.write("<li>"+arr[i]+"</li>")
+            i++;
+        }
+        document.write("</ul>"+summ)
+    </script>
+</body>
+</html>
